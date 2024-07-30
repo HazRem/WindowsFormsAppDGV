@@ -32,12 +32,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonClearSearch = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.groupBoxSortRadioButtons = new System.Windows.Forms.GroupBox();
+            this.buttonClearSearch = new System.Windows.Forms.Button();
             this.comboBoxFilterOptions = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.buttonAddSort = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.textBoxFilterValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -104,37 +104,6 @@
             this.panel2.Size = new System.Drawing.Size(995, 66);
             this.panel2.TabIndex = 7;
             // 
-            // buttonClearSearch
-            // 
-            this.buttonClearSearch.BackColor = System.Drawing.Color.LightCoral;
-            this.buttonClearSearch.FlatAppearance.BorderSize = 0;
-            this.buttonClearSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClearSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
-            this.buttonClearSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonClearSearch.Location = new System.Drawing.Point(223, 39);
-            this.buttonClearSearch.Name = "buttonClearSearch";
-            this.buttonClearSearch.Size = new System.Drawing.Size(17, 17);
-            this.buttonClearSearch.TabIndex = 8;
-            this.buttonClearSearch.Text = "X";
-            this.buttonClearSearch.UseVisualStyleBackColor = false;
-            this.buttonClearSearch.Click += new System.EventHandler(this.buttonClearSearch_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Search:";
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Location = new System.Drawing.Point(81, 37);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(140, 20);
-            this.textBoxSearch.TabIndex = 6;
-            // 
             // groupBoxSortRadioButtons
             // 
             this.groupBoxSortRadioButtons.Controls.Add(this.buttonClearSearch);
@@ -152,6 +121,21 @@
             this.groupBoxSortRadioButtons.TabIndex = 3;
             this.groupBoxSortRadioButtons.TabStop = false;
             // 
+            // buttonClearSearch
+            // 
+            this.buttonClearSearch.BackColor = System.Drawing.Color.LightCoral;
+            this.buttonClearSearch.FlatAppearance.BorderSize = 0;
+            this.buttonClearSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClearSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
+            this.buttonClearSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonClearSearch.Location = new System.Drawing.Point(223, 39);
+            this.buttonClearSearch.Name = "buttonClearSearch";
+            this.buttonClearSearch.Size = new System.Drawing.Size(17, 17);
+            this.buttonClearSearch.TabIndex = 8;
+            this.buttonClearSearch.Text = "X";
+            this.buttonClearSearch.UseVisualStyleBackColor = false;
+            this.buttonClearSearch.Click += new System.EventHandler(this.buttonClearSearch_Click);
+            // 
             // comboBoxFilterOptions
             // 
             this.comboBoxFilterOptions.FormattingEnabled = true;
@@ -168,12 +152,23 @@
             "CONTAINS",
             "DOESN\'T CONTAIN",
             "ASC",
-            "DESC"});
+            "DESC",
+            "SKIM X"});
             this.comboBoxFilterOptions.Location = new System.Drawing.Point(211, 10);
             this.comboBoxFilterOptions.Name = "comboBoxFilterOptions";
             this.comboBoxFilterOptions.Size = new System.Drawing.Size(112, 21);
             this.comboBoxFilterOptions.TabIndex = 6;
             this.comboBoxFilterOptions.Text = "=";
+            this.comboBoxFilterOptions.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterOptions_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Search:";
             // 
             // buttonAddSort
             // 
@@ -184,6 +179,13 @@
             this.buttonAddSort.Text = "Add";
             this.buttonAddSort.UseVisualStyleBackColor = true;
             this.buttonAddSort.Click += new System.EventHandler(this.buttonAddSort_Click);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(81, 37);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(140, 20);
+            this.textBoxSearch.TabIndex = 6;
             // 
             // textBoxFilterValue
             // 

@@ -22,11 +22,13 @@ namespace WindowsFormsAppDGV
                 var x = rand.Next(i, 50000);
                 var y = rand.Next(i, 50000);
                 var z = rand.Next(i, 50000);
-                var q = rand.Next(0, 2);
-                bool tf = q == 1 ? true : false;
-                int xd = 0;
-                xd = tf ? 10 : 20;
-                personList.Add(new Person($"FirstName{50000-i}", $"Surname{i}", $"Title{x}", y, z, xd, tf));
+                var q1 = rand.Next(0, 2);
+                var q2 = rand.Next(0, 2);
+                bool tf = q1 == 1 ? true : false;
+                bool tf2 = q2 == 1 ? true : false;
+                var xd = tf ? 10 : 20;
+                var xdd = tf2 ? 100 : 200;
+                personList.Add(new Person($"FirstName{50000-i}", $"Surname{i}", $"Title{x}", y, z, xd, xdd, tf));
             }
 
             innDgv1.DataSource = personList;
@@ -42,8 +44,9 @@ namespace WindowsFormsAppDGV
         public int Number { get; set; }
         public int Number2 { get; set; }
         public int Number3 { get; set; }
+        public int Number4 { get; set; }
         public bool TrueFalse { get; set; }
-        public Person(string name, string surname, string title, int number, int number2, int number3, bool trueFalse)
+        public Person(string name, string surname, string title, int number, int number2, int number3, int number4, bool trueFalse)
         {
             Name = name;
             Surname = surname;
@@ -51,6 +54,7 @@ namespace WindowsFormsAppDGV
             Number = number;
             Number2 = number2;
             Number3 = number3;
+            Number4 = number4;
             TrueFalse = trueFalse;
         }
     }

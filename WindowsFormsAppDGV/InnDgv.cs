@@ -373,6 +373,12 @@ namespace WindowsFormsAppDGV
                             filteredList = list.Where(item => !prop.GetValue(item).ToString().EndsWith(endsWithValue, StringComparison.InvariantCultureIgnoreCase));
                             break;
                         }
+                    case "SKIM X":
+                        if (int.TryParse(filterItem.Value, out int topX))
+                        {
+                            filteredList = list.Take(topX);
+                        }
+                        break;
                 }
             }
             else
@@ -437,6 +443,15 @@ namespace WindowsFormsAppDGV
             {
                 AddFilter();
             }
+        }
+
+        private void comboBoxFilterOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxFilterValue.Enabled = true;
+            if (comboBoxFilterOptions.Text.Length <= 0) return;
+            if (comboBoxFilterOptions.Text != "ASC" && comboBoxFilterOptions.Text != "DESC") return;
+            textBoxFilterValue.Clear();
+            textBoxFilterValue.Enabled = false;
         }
     }
 
