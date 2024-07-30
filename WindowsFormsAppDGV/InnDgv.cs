@@ -26,6 +26,8 @@ namespace WindowsFormsAppDGV
 
         private Timer searchTimer = new Timer();
 
+        private ContextMenuStrip filterContextMenuStrip;
+
         private bool IsFilteringSuspended()
         {
             return toolStripMenuItemSuspendFiltering.Checked;
@@ -44,6 +46,9 @@ namespace WindowsFormsAppDGV
             textBoxSearch.TextChanged += textBoxGlobalFilter_TextChanged;
             searchTimer.Interval = 1000;
             searchTimer.Tick += SearchTimer_Tick;
+            dataGridView1.CellMouseDown += DataGridView1_CellMouseDown;
+            InitializeFilterContextMenu();
+
         }
 
         public object DataSource
@@ -59,6 +64,87 @@ namespace WindowsFormsAppDGV
             }
         }
 
+        private void InitializeFilterContextMenu()
+        {
+            filterContextMenuStrip = new ContextMenuStrip();
+
+            // Zakładam, że masz metodę, która zwraca dostępne filtry
+            var availableFilters = GetAvailableFilters();
+
+            foreach (var filter in availableFilters)
+            {
+                var filterItem = new ToolStripMenuItem(filter)
+                {
+                    Tag = filter // Przechowuj obiekt filtru w Tagu
+                };
+                filterItem.Click += FilterItem_Click;
+                filterContextMenuStrip.Items.Add(filterItem);
+            }
+        }
+
+        private void FilterItem_Click(object sender, EventArgs e)
+        {
+            textBoxSearch.Clear();
+            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
+            var columnName = clickedItem.GetCurrentParent().Tag.ToString();
+            if (columnName.Contains("System.") && columnName.Contains("Int32"))
+                columnName = columnName.Replace("System.", "");
+
+            SetComboBox1SelectedItem(columnName);
+
+            if (clickedItem != null)
+            {
+                string columnNamex = clickedItem.Tag as string;
+                if (!string.IsNullOrEmpty(columnNamex))
+                {
+                    comboBoxFilterOptions.SelectedItem = columnNamex;
+                }
+            }
+        }
+
+        private void SetComboBox1SelectedItem(string columnName)
+        {
+            // Przejdź przez wszystkie elementy w comboBox1
+            foreach (var item in comboBox1.Items)
+            {
+                // Zakładam, że items w comboBox1 są typu string
+                if (item.ToString() == columnName)
+                {
+                    comboBox1.SelectedItem = item;
+                    return;
+                }
+            }
+            // Opcjonalnie: obsłuż sytuację, gdy columnName nie jest w comboBox1
+            MessageBox.Show($"Column '{columnName}' not found in ComboBox1.");
+        }
+
+
+        private IEnumerable<string> GetAvailableFilters()
+        {
+            // Zwróć kolekcję dostępnych opcji filtrowania
+            return comboBoxFilterOptions.Items.Cast<string>();
+        }
+
+
+        private void DataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.ColumnIndex >= 0)
+            {
+                // Zapisz nazwę kolumny klikniętej przez użytkownika
+                var column = dataGridView1.Columns[e.ColumnIndex];
+                var columnName = column.HeaderText;
+                var columnType = column.ValueType;
+
+                var columnFullName = columnType + " " + columnName;
+                // Wyświetl menu kontekstowe
+                filterContextMenuStrip.Show(dataGridView1, dataGridView1.PointToClient(MousePosition));
+
+                // Przechowuj klikniętą kolumnę w tagu dla późniejszego użycia
+                filterContextMenuStrip.Tag = columnFullName;
+            }
+
+
+        }
         private void SearchTimer_Tick(object sender, EventArgs e)
         {
             searchTimer.Stop();
