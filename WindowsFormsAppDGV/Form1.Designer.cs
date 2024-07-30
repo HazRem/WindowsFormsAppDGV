@@ -33,6 +33,7 @@
             // 
             // innDgv1
             // 
+            this.innDgv1.DataSource = null;
             this.innDgv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.innDgv1.Location = new System.Drawing.Point(0, 0);
             this.innDgv1.Name = "innDgv1";

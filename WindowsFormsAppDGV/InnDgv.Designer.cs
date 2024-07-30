@@ -28,27 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.buttonAddSort = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonClearSearch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.groupBoxSortRadioButtons = new System.Windows.Forms.GroupBox();
+            this.comboBoxFilterOptions = new System.Windows.Forms.ComboBox();
+            this.buttonAddSort = new System.Windows.Forms.Button();
             this.textBoxFilterValue = new System.Windows.Forms.TextBox();
-            this.radioButtonLessThan = new System.Windows.Forms.RadioButton();
-            this.radioButtonMoreThan = new System.Windows.Forms.RadioButton();
-            this.radioButtonEqualTo = new System.Windows.Forms.RadioButton();
-            this.radioButtonSortDesc = new System.Windows.Forms.RadioButton();
-            this.radioButtonSortAsc = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panelBot = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new WindowsFormsAppDGV.FlowLayoutPanelNoScrollbars();
             this.numericUpDownTakeTop = new System.Windows.Forms.NumericUpDown();
+            this.panelBot = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelTop.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.groupBoxSortRadioButtons.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTakeTop)).BeginInit();
+            this.panelBot.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -60,159 +71,157 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(843, 278);
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dataGridView1.Size = new System.Drawing.Size(995, 428);
             this.dataGridView1.TabIndex = 0;
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.numericUpDownTakeTop);
-            this.panelTop.Controls.Add(this.buttonAddSort);
-            this.panelTop.Controls.Add(this.groupBoxSortRadioButtons);
-            this.panelTop.Controls.Add(this.label1);
+            this.panelTop.Controls.Add(this.panel2);
             this.panelTop.Controls.Add(this.flowLayoutPanel1);
-            this.panelTop.Controls.Add(this.comboBox1);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panelTop.Size = new System.Drawing.Size(843, 66);
+            this.panelTop.Size = new System.Drawing.Size(995, 98);
             this.panelTop.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBoxSortRadioButtons);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.panel2.Size = new System.Drawing.Size(995, 66);
+            this.panel2.TabIndex = 7;
+            // 
+            // buttonClearSearch
+            // 
+            this.buttonClearSearch.BackColor = System.Drawing.Color.LightCoral;
+            this.buttonClearSearch.FlatAppearance.BorderSize = 0;
+            this.buttonClearSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClearSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
+            this.buttonClearSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonClearSearch.Location = new System.Drawing.Point(223, 39);
+            this.buttonClearSearch.Name = "buttonClearSearch";
+            this.buttonClearSearch.Size = new System.Drawing.Size(17, 17);
+            this.buttonClearSearch.TabIndex = 8;
+            this.buttonClearSearch.Text = "X";
+            this.buttonClearSearch.UseVisualStyleBackColor = false;
+            this.buttonClearSearch.Click += new System.EventHandler(this.buttonClearSearch_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Search:";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(81, 37);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(140, 20);
+            this.textBoxSearch.TabIndex = 6;
+            // 
+            // groupBoxSortRadioButtons
+            // 
+            this.groupBoxSortRadioButtons.Controls.Add(this.buttonClearSearch);
+            this.groupBoxSortRadioButtons.Controls.Add(this.comboBoxFilterOptions);
+            this.groupBoxSortRadioButtons.Controls.Add(this.label3);
+            this.groupBoxSortRadioButtons.Controls.Add(this.buttonAddSort);
+            this.groupBoxSortRadioButtons.Controls.Add(this.textBoxSearch);
+            this.groupBoxSortRadioButtons.Controls.Add(this.textBoxFilterValue);
+            this.groupBoxSortRadioButtons.Controls.Add(this.label1);
+            this.groupBoxSortRadioButtons.Controls.Add(this.comboBox1);
+            this.groupBoxSortRadioButtons.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBoxSortRadioButtons.Location = new System.Drawing.Point(0, 2);
+            this.groupBoxSortRadioButtons.Name = "groupBoxSortRadioButtons";
+            this.groupBoxSortRadioButtons.Size = new System.Drawing.Size(535, 62);
+            this.groupBoxSortRadioButtons.TabIndex = 3;
+            this.groupBoxSortRadioButtons.TabStop = false;
+            // 
+            // comboBoxFilterOptions
+            // 
+            this.comboBoxFilterOptions.FormattingEnabled = true;
+            this.comboBoxFilterOptions.Items.AddRange(new object[] {
+            "=",
+            ">",
+            "<",
+            ">=",
+            "<=",
+            "STARTS WITH",
+            "DOESN\'T START WITH",
+            "ENDS WITH",
+            "DOESN\'T END WITH",
+            "CONTAINS",
+            "DOESN\'T CONTAIN",
+            "ASC",
+            "DESC"});
+            this.comboBoxFilterOptions.Location = new System.Drawing.Point(211, 10);
+            this.comboBoxFilterOptions.Name = "comboBoxFilterOptions";
+            this.comboBoxFilterOptions.Size = new System.Drawing.Size(112, 21);
+            this.comboBoxFilterOptions.TabIndex = 6;
+            this.comboBoxFilterOptions.Text = "=";
             // 
             // buttonAddSort
             // 
-            this.buttonAddSort.Location = new System.Drawing.Point(620, 9);
+            this.buttonAddSort.Location = new System.Drawing.Point(473, 10);
             this.buttonAddSort.Name = "buttonAddSort";
-            this.buttonAddSort.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddSort.Size = new System.Drawing.Size(58, 23);
             this.buttonAddSort.TabIndex = 4;
             this.buttonAddSort.Text = "Add";
             this.buttonAddSort.UseVisualStyleBackColor = true;
             this.buttonAddSort.Click += new System.EventHandler(this.buttonAddSort_Click);
             // 
-            // groupBoxSortRadioButtons
-            // 
-            this.groupBoxSortRadioButtons.Controls.Add(this.textBoxFilterValue);
-            this.groupBoxSortRadioButtons.Controls.Add(this.radioButtonLessThan);
-            this.groupBoxSortRadioButtons.Controls.Add(this.radioButtonMoreThan);
-            this.groupBoxSortRadioButtons.Controls.Add(this.radioButtonEqualTo);
-            this.groupBoxSortRadioButtons.Controls.Add(this.radioButtonSortDesc);
-            this.groupBoxSortRadioButtons.Controls.Add(this.radioButtonSortAsc);
-            this.groupBoxSortRadioButtons.Location = new System.Drawing.Point(239, 0);
-            this.groupBoxSortRadioButtons.Name = "groupBoxSortRadioButtons";
-            this.groupBoxSortRadioButtons.Size = new System.Drawing.Size(375, 38);
-            this.groupBoxSortRadioButtons.TabIndex = 3;
-            this.groupBoxSortRadioButtons.TabStop = false;
-            this.groupBoxSortRadioButtons.Text = "Sort/Filter";
-            // 
             // textBoxFilterValue
             // 
-            this.textBoxFilterValue.Enabled = false;
-            this.textBoxFilterValue.Location = new System.Drawing.Point(229, 12);
+            this.textBoxFilterValue.Location = new System.Drawing.Point(329, 11);
             this.textBoxFilterValue.Name = "textBoxFilterValue";
             this.textBoxFilterValue.Size = new System.Drawing.Size(140, 20);
             this.textBoxFilterValue.TabIndex = 5;
-            // 
-            // radioButtonLessThan
-            // 
-            this.radioButtonLessThan.AutoSize = true;
-            this.radioButtonLessThan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F);
-            this.radioButtonLessThan.Location = new System.Drawing.Point(192, 15);
-            this.radioButtonLessThan.Name = "radioButtonLessThan";
-            this.radioButtonLessThan.Size = new System.Drawing.Size(31, 17);
-            this.radioButtonLessThan.TabIndex = 4;
-            this.radioButtonLessThan.Text = "<";
-            this.radioButtonLessThan.UseVisualStyleBackColor = true;
-            this.radioButtonLessThan.CheckedChanged += new System.EventHandler(this.radioButtonSort_CheckedChanged);
-            // 
-            // radioButtonMoreThan
-            // 
-            this.radioButtonMoreThan.AutoSize = true;
-            this.radioButtonMoreThan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F);
-            this.radioButtonMoreThan.Location = new System.Drawing.Point(155, 15);
-            this.radioButtonMoreThan.Name = "radioButtonMoreThan";
-            this.radioButtonMoreThan.Size = new System.Drawing.Size(31, 17);
-            this.radioButtonMoreThan.TabIndex = 3;
-            this.radioButtonMoreThan.Text = ">";
-            this.radioButtonMoreThan.UseVisualStyleBackColor = true;
-            this.radioButtonMoreThan.CheckedChanged += new System.EventHandler(this.radioButtonSort_CheckedChanged);
-            // 
-            // radioButtonEqualTo
-            // 
-            this.radioButtonEqualTo.AutoSize = true;
-            this.radioButtonEqualTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F);
-            this.radioButtonEqualTo.Location = new System.Drawing.Point(118, 15);
-            this.radioButtonEqualTo.Name = "radioButtonEqualTo";
-            this.radioButtonEqualTo.Size = new System.Drawing.Size(31, 17);
-            this.radioButtonEqualTo.TabIndex = 2;
-            this.radioButtonEqualTo.Text = "=";
-            this.radioButtonEqualTo.UseVisualStyleBackColor = true;
-            this.radioButtonEqualTo.CheckedChanged += new System.EventHandler(this.radioButtonSort_CheckedChanged);
-            // 
-            // radioButtonSortDesc
-            // 
-            this.radioButtonSortDesc.AutoSize = true;
-            this.radioButtonSortDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F);
-            this.radioButtonSortDesc.Location = new System.Drawing.Point(58, 15);
-            this.radioButtonSortDesc.Name = "radioButtonSortDesc";
-            this.radioButtonSortDesc.Size = new System.Drawing.Size(54, 17);
-            this.radioButtonSortDesc.TabIndex = 1;
-            this.radioButtonSortDesc.Text = "DESC";
-            this.radioButtonSortDesc.UseVisualStyleBackColor = true;
-            this.radioButtonSortDesc.CheckedChanged += new System.EventHandler(this.radioButtonSort_CheckedChanged);
-            // 
-            // radioButtonSortAsc
-            // 
-            this.radioButtonSortAsc.AutoSize = true;
-            this.radioButtonSortAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F);
-            this.radioButtonSortAsc.Location = new System.Drawing.Point(6, 15);
-            this.radioButtonSortAsc.Name = "radioButtonSortAsc";
-            this.radioButtonSortAsc.Size = new System.Drawing.Size(46, 17);
-            this.radioButtonSortAsc.TabIndex = 0;
-            this.radioButtonSortAsc.Text = "ASC";
-            this.radioButtonSortAsc.UseVisualStyleBackColor = true;
-            this.radioButtonSortAsc.CheckedChanged += new System.EventHandler(this.radioButtonSort_CheckedChanged);
+            this.textBoxFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFilterValue_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 17);
+            this.label1.Location = new System.Drawing.Point(12, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Add to filter:";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 38);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(843, 28);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(88, 13);
+            this.comboBox1.Location = new System.Drawing.Point(81, 10);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 21);
+            this.comboBox1.Size = new System.Drawing.Size(124, 21);
             this.comboBox1.TabIndex = 0;
             // 
-            // panelBot
+            // flowLayoutPanel1
             // 
-            this.panelBot.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBot.Location = new System.Drawing.Point(0, 344);
-            this.panelBot.Name = "panelBot";
-            this.panelBot.Size = new System.Drawing.Size(843, 52);
-            this.panelBot.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 66);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(843, 278);
-            this.panel1.TabIndex = 3;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 68);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(0, 30);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(995, 30);
+            this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.WrapContents = false;
             // 
             // numericUpDownTakeTop
             // 
@@ -221,7 +230,17 @@
             0,
             0,
             0});
-            this.numericUpDownTakeTop.Location = new System.Drawing.Point(788, 15);
+            this.numericUpDownTakeTop.Location = new System.Drawing.Point(46, 3);
+            this.numericUpDownTakeTop.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.numericUpDownTakeTop.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.numericUpDownTakeTop.Name = "numericUpDownTakeTop";
             this.numericUpDownTakeTop.Size = new System.Drawing.Size(52, 20);
             this.numericUpDownTakeTop.TabIndex = 5;
@@ -230,6 +249,76 @@
             0,
             0,
             0});
+            this.numericUpDownTakeTop.ValueChanged += new System.EventHandler(this.numericUpDownTakeTop_ValueChanged);
+            // 
+            // panelBot
+            // 
+            this.panelBot.Controls.Add(this.panel3);
+            this.panelBot.Controls.Add(this.statusStrip1);
+            this.panelBot.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBot.Location = new System.Drawing.Point(0, 526);
+            this.panelBot.Name = "panelBot";
+            this.panelBot.Size = new System.Drawing.Size(995, 46);
+            this.panelBot.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.numericUpDownTakeTop);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(896, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(99, 24);
+            this.panel3.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Show:";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 24);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(995, 22);
+            this.statusStrip1.TabIndex = 0;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(22, 17);
+            this.toolStripStatusLabel1.Tag = "";
+            this.toolStripStatusLabel1.Text = "---";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(22, 17);
+            this.toolStripStatusLabel2.Text = "---";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(936, 17);
+            this.toolStripStatusLabel3.Spring = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 98);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(995, 428);
+            this.panel1.TabIndex = 3;
             // 
             // InnDgv
             // 
@@ -239,14 +328,21 @@
             this.Controls.Add(this.panelBot);
             this.Controls.Add(this.panelTop);
             this.Name = "InnDgv";
-            this.Size = new System.Drawing.Size(843, 396);
+            this.Size = new System.Drawing.Size(995, 572);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.groupBoxSortRadioButtons.ResumeLayout(false);
             this.groupBoxSortRadioButtons.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTakeTop)).EndInit();
+            this.panelBot.ResumeLayout(false);
+            this.panelBot.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,16 +354,22 @@
         private System.Windows.Forms.Panel panelBot;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBoxSortRadioButtons;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButtonSortDesc;
-        private System.Windows.Forms.RadioButton radioButtonSortAsc;
         private System.Windows.Forms.Button buttonAddSort;
         private System.Windows.Forms.TextBox textBoxFilterValue;
-        private System.Windows.Forms.RadioButton radioButtonLessThan;
-        private System.Windows.Forms.RadioButton radioButtonMoreThan;
-        private System.Windows.Forms.RadioButton radioButtonEqualTo;
         private System.Windows.Forms.NumericUpDown numericUpDownTakeTop;
+        private System.Windows.Forms.ComboBox comboBoxFilterOptions;
+        private FlowLayoutPanelNoScrollbars flowLayoutPanel1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonClearSearch;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
     }
 }
