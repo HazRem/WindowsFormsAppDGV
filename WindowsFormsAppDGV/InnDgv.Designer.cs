@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.buttonOpenMenuStripFilterBar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBoxSortRadioButtons = new System.Windows.Forms.GroupBox();
             this.buttonClearSearch = new System.Windows.Forms.Button();
@@ -47,6 +43,11 @@
             this.textBoxFilterValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new WindowsFormsAppDGV.FlowLayoutPanelNoScrollbars();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.buttonOpenMenuStripFilterBar = new System.Windows.Forms.Button();
             this.numericUpDownTakeTop = new System.Windows.Forms.NumericUpDown();
             this.panelBot = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,15 +58,14 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.contextMenuStripFilterBar = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.flowLayoutPanel1 = new WindowsFormsAppDGV.FlowLayoutPanelNoScrollbars();
+            this.toolStripMenuItemSuspendFiltering = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelTop.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.groupBoxSortRadioButtons.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.groupBoxSortRadioButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTakeTop)).BeginInit();
             this.panelBot.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -84,14 +84,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.Size = new System.Drawing.Size(995, 428);
             this.dataGridView1.TabIndex = 0;
@@ -99,8 +99,8 @@
             // panelTop
             // 
             this.panelTop.Controls.Add(this.panel4);
-            this.panelTop.Controls.Add(this.panel6);
             this.panelTop.Controls.Add(this.panel2);
+            this.panelTop.Controls.Add(this.panel6);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
@@ -116,50 +116,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(995, 1);
             this.panel4.TabIndex = 8;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel5);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 68);
-            this.panel6.MaximumSize = new System.Drawing.Size(0, 31);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(995, 30);
-            this.panel6.TabIndex = 8;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.flowLayoutPanel1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(29, 0);
-            this.panel5.MaximumSize = new System.Drawing.Size(10000000, 31);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(966, 30);
-            this.panel5.TabIndex = 4;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.buttonOpenMenuStripFilterBar);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(2);
-            this.panel7.Size = new System.Drawing.Size(29, 30);
-            this.panel7.TabIndex = 0;
-            // 
-            // buttonOpenMenuStripFilterBar
-            // 
-            this.buttonOpenMenuStripFilterBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonOpenMenuStripFilterBar.FlatAppearance.BorderSize = 0;
-            this.buttonOpenMenuStripFilterBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOpenMenuStripFilterBar.Location = new System.Drawing.Point(2, 2);
-            this.buttonOpenMenuStripFilterBar.Name = "buttonOpenMenuStripFilterBar";
-            this.buttonOpenMenuStripFilterBar.Size = new System.Drawing.Size(25, 26);
-            this.buttonOpenMenuStripFilterBar.TabIndex = 5;
-            this.buttonOpenMenuStripFilterBar.Text = "...";
-            this.buttonOpenMenuStripFilterBar.UseVisualStyleBackColor = true;
-            this.buttonOpenMenuStripFilterBar.Click += new System.EventHandler(this.buttonOpenMenuStripFilterBar_Click);
             // 
             // panel2
             // 
@@ -281,6 +237,64 @@
             this.comboBox1.Size = new System.Drawing.Size(124, 21);
             this.comboBox1.TabIndex = 0;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel5);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 68);
+            this.panel6.MaximumSize = new System.Drawing.Size(0, 31);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(995, 30);
+            this.panel6.TabIndex = 8;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.flowLayoutPanel1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(29, 0);
+            this.panel5.MaximumSize = new System.Drawing.Size(10000000, 31);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(966, 30);
+            this.panel5.TabIndex = 4;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Lavender;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(0, 30);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(966, 30);
+            this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Lavender;
+            this.panel7.Controls.Add(this.buttonOpenMenuStripFilterBar);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(1);
+            this.panel7.Size = new System.Drawing.Size(29, 30);
+            this.panel7.TabIndex = 0;
+            // 
+            // buttonOpenMenuStripFilterBar
+            // 
+            this.buttonOpenMenuStripFilterBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonOpenMenuStripFilterBar.FlatAppearance.BorderSize = 0;
+            this.buttonOpenMenuStripFilterBar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonOpenMenuStripFilterBar.Location = new System.Drawing.Point(1, 1);
+            this.buttonOpenMenuStripFilterBar.Name = "buttonOpenMenuStripFilterBar";
+            this.buttonOpenMenuStripFilterBar.Size = new System.Drawing.Size(27, 28);
+            this.buttonOpenMenuStripFilterBar.TabIndex = 5;
+            this.buttonOpenMenuStripFilterBar.Text = "🔻";
+            this.buttonOpenMenuStripFilterBar.UseVisualStyleBackColor = true;
+            this.buttonOpenMenuStripFilterBar.Click += new System.EventHandler(this.buttonOpenMenuStripFilterBar_Click);
+            // 
             // numericUpDownTakeTop
             // 
             this.numericUpDownTakeTop.Increment = new decimal(new int[] {
@@ -380,32 +394,19 @@
             // 
             // contextMenuStripFilterBar
             // 
-            this.contextMenuStripFilterBar.AutoClose = false;
             this.contextMenuStripFilterBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuItemSuspendFiltering});
             this.contextMenuStripFilterBar.Name = "contextMenuStripFilterBar";
             this.contextMenuStripFilterBar.Size = new System.Drawing.Size(166, 26);
             this.contextMenuStripFilterBar.Text = "Filter Bar Options";
             // 
-            // toolStripMenuItem1
+            // toolStripMenuItemSuspendFiltering
             // 
-            this.toolStripMenuItem1.CheckOnClick = true;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
-            this.toolStripMenuItem1.Text = "Suspend Filtering";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(0, 30);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(966, 30);
-            this.flowLayoutPanel1.TabIndex = 6;
-            this.flowLayoutPanel1.WrapContents = false;
+            this.toolStripMenuItemSuspendFiltering.CheckOnClick = true;
+            this.toolStripMenuItemSuspendFiltering.Name = "toolStripMenuItemSuspendFiltering";
+            this.toolStripMenuItemSuspendFiltering.Size = new System.Drawing.Size(165, 22);
+            this.toolStripMenuItemSuspendFiltering.Text = "Suspend Filtering";
+            this.toolStripMenuItemSuspendFiltering.CheckedChanged += new System.EventHandler(this.SuspendFilteringToolStripMenuItem_CheckedChanged);
             // 
             // InnDgv
             // 
@@ -418,13 +419,13 @@
             this.Size = new System.Drawing.Size(995, 572);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelTop.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.groupBoxSortRadioButtons.ResumeLayout(false);
+            this.groupBoxSortRadioButtons.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.groupBoxSortRadioButtons.ResumeLayout(false);
-            this.groupBoxSortRadioButtons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTakeTop)).EndInit();
             this.panelBot.ResumeLayout(false);
             this.panelBot.PerformLayout();
@@ -468,6 +469,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button buttonOpenMenuStripFilterBar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripFilterBar;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSuspendFiltering;
     }
 }

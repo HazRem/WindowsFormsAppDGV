@@ -24,6 +24,13 @@ namespace WindowsFormsAppDGV
 
         private List<Control> previousControlOrder = new List<Control>();
 
+        private Timer searchTimer = new Timer();
+
+        private bool IsFilteringSuspended()
+        {
+            return toolStripMenuItemSuspendFiltering.Checked;
+        }
+
         public InnDgv()
         {
             InitializeComponent();
@@ -35,6 +42,8 @@ namespace WindowsFormsAppDGV
             flowLayoutPanel1.VerticalScroll.Enabled = false;
             flowLayoutPanel1.AutoScroll = true;
             textBoxSearch.TextChanged += textBoxGlobalFilter_TextChanged;
+            searchTimer.Interval = 1000;
+            searchTimer.Tick += SearchTimer_Tick;
         }
 
         public object DataSource
@@ -48,6 +57,12 @@ namespace WindowsFormsAppDGV
                 ShowTotalRowNumber(_bindingList);
                 ApplySortingAndFiltering();
             }
+        }
+
+        private void SearchTimer_Tick(object sender, EventArgs e)
+        {
+            searchTimer.Stop();
+            ApplyFilter();
         }
 
         private void ApplySortingAndFiltering()
@@ -251,6 +266,7 @@ namespace WindowsFormsAppDGV
 
         private void ApplyFilter()
         {
+            if (IsFilteringSuspended()) return;
             if (_bindingList == null) return;
 
             var filters = flowLayoutPanel1.Controls.OfType<FilterItem>().Where(fi => fi.IsChecked && !fi.IsSort).ToList();
@@ -436,7 +452,8 @@ namespace WindowsFormsAppDGV
 
         private void textBoxGlobalFilter_TextChanged(object sender, EventArgs e)
         {
-            ApplyFilter();
+            searchTimer.Start();
+            //ApplyFilter();
         }
 
         private void buttonClearSearch_Click(object sender, EventArgs e)
@@ -472,11 +489,12 @@ namespace WindowsFormsAppDGV
 
         private void buttonOpenMenuStripFilterBar_Click(object sender, EventArgs e)
         {
-            if (contextMenuStripFilterBar.Visible) 
-            { 
-                contextMenuStripFilterBar.Close();
-                return;
-            }
+            //if (contextMenuStripFilterBar.Visible)
+            //{
+            //    contextMenuStripFilterBar.Close();
+            //    return;
+            //}
+
             Button button = sender as Button;
 
             if (button != null)
@@ -486,11 +504,24 @@ namespace WindowsFormsAppDGV
                 int buttonHeight = button.Height;
 
                 Point screenPoint = button.PointToScreen(new Point(buttonLocation.X, buttonLocation.Y + buttonHeight));
-
+                
                 contextMenuStripFilterBar.Show(screenPoint);
             }
         }
 
+        private void SuspendFilteringToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            // Jeżeli filtracja została wznowiona, zastosuj filtr
+            if (!IsFilteringSuspended())
+            {
+                ApplyFilter();
+                flowLayoutPanel1.BackColor = Color.Lavender;
+            }
+            else
+            {
+                flowLayoutPanel1.BackColor = SystemColors.ControlDarkDark;
+            }
+        }
     }
 
     public class SortableBindingList<T> : BindingList<T>
