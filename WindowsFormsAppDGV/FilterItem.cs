@@ -38,8 +38,12 @@ namespace WindowsFormsAppDGV
         {
             get
             {
-                string labelText = $"{ColumnName} {SortFilterType}";
-                if (Value != null) labelText += $" {Value}";
+                string labelText = string.Empty;
+                if (SortFilterType != "SKIM X") 
+                    labelText += ColumnName + " ";
+                labelText += SortFilterType;
+                if (Value != null) 
+                    labelText += $" {Value}";
                 return labelText;
             }
         }

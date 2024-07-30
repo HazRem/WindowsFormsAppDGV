@@ -186,6 +186,14 @@ namespace WindowsFormsAppDGV
 
             foreach (Control control in flowLayoutPanel1.Controls)
             {
+                if (control is FilterItem filterItem)
+                {
+                    filterItem.FilterChanged -= (s, e) => ApplyFilter(); // Usuń poprzednie przypisania, jeśli istnieją
+                }
+            }
+
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
                 if (control is FilterItem filterItem && filterItem.ColumnName == columnName && filterItem.SortFilterType == sortFilterItem)
                 {
                     filterItem.Value = textValue;
@@ -205,7 +213,6 @@ namespace WindowsFormsAppDGV
             {
                 if (control is FilterItem filterItem)
                 {
-                    filterItem.FilterChanged -= (s, e) => ApplyFilter(); // Usuń poprzednie przypisania, jeśli istnieją
                     filterItem.FilterChanged += (s, e) => ApplyFilter();
                 }
             }
@@ -448,11 +455,42 @@ namespace WindowsFormsAppDGV
         private void comboBoxFilterOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBoxFilterValue.Enabled = true;
-            if (comboBoxFilterOptions.Text.Length <= 0) return;
-            if (comboBoxFilterOptions.Text != "ASC" && comboBoxFilterOptions.Text != "DESC") return;
-            textBoxFilterValue.Clear();
-            textBoxFilterValue.Enabled = false;
+            comboBox1.Enabled = true;
+            if (comboBoxFilterOptions.Text.Length > 0)
+            {
+                if (comboBoxFilterOptions.Text == "ASC" || comboBoxFilterOptions.Text == "DESC") 
+                {
+                    textBoxFilterValue.Clear();
+                    textBoxFilterValue.Enabled = false;
+                }
+                if (comboBoxFilterOptions.Text == "SKIM X")
+                {
+                    comboBox1.Enabled = false;
+                }
+            }
         }
+
+        private void buttonOpenMenuStripFilterBar_Click(object sender, EventArgs e)
+        {
+            if (contextMenuStripFilterBar.Visible) 
+            { 
+                contextMenuStripFilterBar.Close();
+                return;
+            }
+            Button button = sender as Button;
+
+            if (button != null)
+            {
+                Point buttonLocation = button.Location;
+
+                int buttonHeight = button.Height;
+
+                Point screenPoint = button.PointToScreen(new Point(buttonLocation.X, buttonLocation.Y + buttonHeight));
+
+                contextMenuStripFilterBar.Show(screenPoint);
+            }
+        }
+
     }
 
     public class SortableBindingList<T> : BindingList<T>
